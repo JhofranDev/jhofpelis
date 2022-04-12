@@ -18,12 +18,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Session />}>
+        <Route path='/session' element={<Session />}>
           <Route index element={<Login />} />
           <Route path='Sign-up' element={<CreateSession />} />
         </Route>
 
-        <Route path='/jhofpelis' element={<Layout />}>
+        <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
           <Route path='detail' element={<Detail />} />
           <Route path='favorites' element={<Favorite />} />
