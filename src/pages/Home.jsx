@@ -1,23 +1,43 @@
+import { useState, useEffect } from 'react'
+
+// componentes
+import CoverPage from '../components/CoverPage'
+import SectionMovie from '../components/SectionMovie'
+
 // multimedia
 import fondo from '../images/fondo2.jpg'
 import card from '../images/card1.jpg'
 
 const Home = () => {
+
+  const [movie, setMovie] = useState({})
+  const [movies, setMovies] = useState([])
+
+  useEffect(() => {
+    const getPopularMovies = async () => {
+      try {
+        const url = 'https://api.themoviedb.org/3/movie/popular?api_key=f05e97a11aba1268670bfd11062aba02&language=es-MX&page=1'
+        const response = await fetch(url)
+        const request  = await response.json()
+        const results  = request.results
+        const movies   = results.filter(movie => movie.overview != '')
+
+        setMovies(movies)
+        setMovie(movies[0])
+        console.log(movies[0])
+      } catch (err) {
+        console.log(err)
+      }
+
+    }
+
+    getPopularMovies()
+  }, [])
+
   return (
     <main className="bg-black">
-      <article className='relative min-h-[92vh] '>
-        <div className='h-[92vh]'>
-          <img className='h-[85vh] w-full' src={fondo} alt='Fondo' />
-        </div>
-        <div className='absolute bg-gradient-to-b from-black/10 via-black/50 to-black h-[220px] w-full  bottom-3 left-0 flex justify-around items-center'>
-          <div className='h-[182px] w-[332px] hover:h-[185px] hover:w-[335px] hover:border-4 border-white/70 bg-black rounded'>
-            <img src={card} alt='Fondo' className='h-full w-full' />
-          </div>
-          <div className='h-[182px] w-[332px] hover:h-[185px] hover:w-[335px] hover:border-4 border-white/70 bg-black rounded'>
-            <img src={card} alt='Fondo' className='h-full w-full' />
-          </div>
-        </div>
-      </article>
+      <CoverPage movies={movies} movie={movie} setMovie={setMovie} />
+
       <article>
         <section>
           <h2 className='text-white font-bold text-lg pl-10'>Tus Favoritas</h2>
@@ -30,7 +50,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section></section>
+        <SectionMovie movies={movies}/>
       </article>
     </main>
   )
