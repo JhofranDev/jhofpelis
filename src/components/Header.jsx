@@ -8,18 +8,16 @@ import ButtonSignOut from './ButtonSignOut'
 
 const Header = () => {
 
-  const [ validated, setValidated ] = useState(false)
+  const [ validated, setValidated ] = useState(0)
 
-  // useEffect(() => {
-  //   const getValidation = () => {
-  //     const token = localStorage.getItem('Token')
-  //     if(token) {
-
-  //     }
-  //   }
-
-  //   getValidation()
-  // }, [])
+  useEffect(() => {
+    const validation = localStorage.getItem('initiated')
+    if (validation && validation == '1') {
+      setValidated(1)
+    } else {
+      setValidated(0)
+    }
+  }, [])
 
   return (
     <header 
@@ -34,7 +32,7 @@ const Header = () => {
 
       <Nav />
 
-      {validated ? 
+      {validated === 1? 
         <ButtonSignOut setValidated={setValidated} /> 
       : 
         <ButtonSignIn setValidated={setValidated} />

@@ -5,9 +5,8 @@ const ButtonSignOut = () => {
   let navigate = useNavigate();
 
   const handleClick = () => {
-    localStorage.setItem('validated', false)
-    localStorage.removeItem('token')
-    navigate(`/`)
+    localStorage.clear()
+    window.open(`http://localhost:3000/`, '_self')
   }
 
   return (
