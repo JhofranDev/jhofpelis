@@ -5,7 +5,6 @@ import CoverPage from '../components/CoverPage'
 import SectionMovie from '../components/SectionMovie'
 
 // multimedia
-import fondo from '../images/fondo2.jpg'
 import card from '../images/card1.jpg'
 
 const Home = () => {
@@ -24,8 +23,8 @@ const Home = () => {
 
         setMovies(movies)
         setMovie(movies[0])
-        console.log(movies[0])
       } catch (err) {
+        console.log('entre aca');
         console.log(err)
       }
 
@@ -39,7 +38,7 @@ const Home = () => {
       <CoverPage movies={movies} movie={movie} setMovie={setMovie} />
 
       <article>
-        <section>
+        {/* <section>
           <h2 className='text-white font-bold text-lg pl-10'>Tus Favoritas</h2>
           <div className=' bg-black h-[220px] w-full flex justify-around items-center'>
             <div className='h-[182px] w-[332px] hover:h-[185px] hover:w-[335px] hover:border-4 border-white/70 bg-black rounded'>
@@ -49,7 +48,7 @@ const Home = () => {
               <img src={card} alt='Fondo' className='h-full w-full' />
             </div>
           </div>
-        </section>
+        </section> */}
         <SectionMovie movies={movies}/>
       </article>
     </main>

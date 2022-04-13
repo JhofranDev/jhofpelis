@@ -25,10 +25,9 @@ const Featured = ({ movies, setMovie }) => {
       {featuredMovies.map((movie, i) => (
         <CoverCard
           key={i}
-          image={`https://image.tmdb.org/t/p/original${movie['backdrop_path']}`} 
-          alt={`Poster de ${movie.title}`}
           updateMovie={updateMovie}
           id={i}
+          movie={movie}
         />
       ))}
     </div>

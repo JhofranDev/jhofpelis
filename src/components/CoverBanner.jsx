@@ -4,10 +4,10 @@ const CoverBanner = ({ movie }) => {
   return (
     <div 
      className='
-      absolute top-[20%] left-0
-      w-[40%] h-[300px]
-      flex flex-col justify-center
       pl-10
+      w-[40%] h-[300px]
+      absolute top-[30%] left-0
+      flex flex-col justify-center
       bg-gradient-to-r from-black via-black/50 to-black/1
       text-white
     '

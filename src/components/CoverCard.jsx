@@ -1,7 +1,7 @@
+import { Link } from 'react-router-dom'
 
 
-
-const CoverCard = ({ image, alt, updateMovie, id }) => {
+const CoverCard = ({ updateMovie, id, movie }) => {
 
   const handleMousedEnter = (e) => {
     updateMovie(id)
@@ -15,10 +15,16 @@ const CoverCard = ({ image, alt, updateMovie, id }) => {
         rounded border-white/70
         hover:h-[185px] hover:w-[335px] hover:border-4 
       '
-      id={id}
       onMouseEnter={handleMousedEnter}
     >
-      <img src={image} alt={alt} className='h-full w-full' />
+      <Link to={`/detail/${movie.id}`} >
+        <img 
+          src={`https://image.tmdb.org/t/p/original${movie['backdrop_path']}`}
+          alt={`Poster de ${movie.title}`} 
+          className='h-full w-full' 
+        />
+      </Link>
+
     </div>
   )
 }

@@ -7,7 +7,7 @@ import CoverBanner from './CoverBanner'
 const CoverPage = ({ movies, movie, setMovie }) => {
 
   return (
-    <article className='relative min-h-[92vh] overflow-hidden'>
+    <article className='relative min-h-screen overflow-hidden'>
 
       <CoverImage movie={movie}/>
       <CoverBanner movie={movie} />
