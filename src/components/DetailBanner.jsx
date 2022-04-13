@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DetailBanner = ({ movie }) => {
+const DetailBanner = ({ movie, handleClickSave }) => {
   return (
     <div 
      className='
@@ -20,8 +20,19 @@ const DetailBanner = ({ movie }) => {
         <span className='mr-5 font-medium text-sm text-gray-200'>Promedio Votos: {movie['vote_average']}</span>
       </div>
       <p className='font-medium text-sm'>{movie.overview}</p>
-      <button className='bg-green-500 py-2 px-5 rounded-md text-sm font-medium my-5 hover:bg-green-700' >GUARDAR</button>
-      <button className='bg-zinc-500 py-2 px-5 rounded-md text-sm font-medium my-5 hover:bg-zinc-700 hidden' >QUITAR</button>
+
+      <button 
+        className='
+          bg-green-500 py-2 px-5 rounded-md text-sm font-medium my-5 hover:bg-green-700
+        '
+        onClick={handleClickSave}
+      >GUARDAR</button>
+
+      <button 
+        className='
+          bg-zinc-500 py-2 px-5 rounded-md text-sm font-medium my-5 hover:bg-zinc-700 hidden
+        '
+      >QUITAR</button>
     </div>
   )
 }
