@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const ReviewCard = ({ review }) => {
   return (
     <div className='bg-zinc-700 text-white p-10'>

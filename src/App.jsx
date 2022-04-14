@@ -2,7 +2,7 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-// Los layouts serán nuestros masters pages para este proyecto
+// Esta layout sera nuestra máster page
 import Layout from './layouts/Layout'
 
 // paginas

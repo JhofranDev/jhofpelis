@@ -1,12 +1,9 @@
-import { useState, useEffect } from 'react'
-
 
 const ButtonSignIn = () => {
-
   const handleClick = async () => {
-
     try {
       const url = 'https://api.themoviedb.org/3/authentication/token/new?api_key=f05e97a11aba1268670bfd11062aba02'
+
       const response = await fetch(url)
       const request  = await response.json()
       const requestToken = request['request_token']
@@ -14,10 +11,9 @@ const ButtonSignIn = () => {
       localStorage.setItem('TokenTemporal', requestToken)
       localStorage.setItem('validated', 1)
 
-      window.open(`https://www.themoviedb.org/authenticate/${requestToken}?redirect_to=http://localhost:3000/`, '_self')
+      window.open(`https://www.themoviedb.org/authenticate/${requestToken}?redirect_to=https://strong-mousse-2caad7.netlify.app/`, '_self')
       
     } catch (err) {
-      console.log('entre aca');
       console.log(err)
     }
   }

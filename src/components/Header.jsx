@@ -20,16 +20,7 @@ const Header = () => {
   }, [])
 
   return (
-    <header 
-      className='
-        px-10 
-        h-[8vh] w-full
-        fixed z-10
-        bg-black 
-        flex justify-between items-center 
-      '
-    >
-
+    <header className='px-10  h-[8vh] w-full fixed z-10 bg-black flex justify-between items-center'>
       <Nav />
 
       {validated === 1? 

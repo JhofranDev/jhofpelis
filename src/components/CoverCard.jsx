@@ -1,3 +1,4 @@
+// react-router-dom
 import { Link } from 'react-router-dom'
 
 
@@ -17,11 +18,12 @@ const CoverCard = ({ updateMovie, id, movie }) => {
       '
       onMouseEnter={handleMousedEnter}
     >
+
       <Link to={`/detail/${movie.id}`} >
         <img 
-          src={`https://image.tmdb.org/t/p/original${movie['backdrop_path']}`}
-          alt={`Poster de ${movie.title}`} 
           className='h-full w-full' 
+          alt={`Poster de ${movie.title}`} 
+          src={`https://image.tmdb.org/t/p/original${movie['backdrop_path']}`}
         />
       </Link>
 

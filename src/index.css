@@ -1,4 +1,4 @@
-/* Para los style de jhofpeli's app web, se utiliza tailwind css. A continuación se agregan las directivas para cada capa a su archivo CSS principal. le dejo un enlace para mas info. https://tailwindcss.com/docs/installation/using-postcss */
+/* Directivas de Tailwindcss https://tailwindcss.com/docs/installation/using-postcss */
 
 @tailwind base;
 @tailwind components;

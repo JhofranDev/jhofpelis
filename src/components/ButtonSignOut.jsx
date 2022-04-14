@@ -1,12 +1,10 @@
-import { useNavigate } from "react-router-dom";
+
 
 const ButtonSignOut = () => {
 
-  let navigate = useNavigate();
-
   const handleClick = () => {
     localStorage.clear()
-    window.open(`http://localhost:3000/`, '_self')
+    window.open(`https://strong-mousse-2caad7.netlify.app/`, '_self')
   }
 
   return (
@@ -14,8 +12,8 @@ const ButtonSignOut = () => {
       className='
         py-3 px-6 
         rounded-md
-        font-medium text-sm text-white bg-zinc-600 
         hover:bg-zinc-700
+        font-medium text-sm text-white bg-zinc-600 
       '
       onClick={handleClick}
     >CERRAR SESIÓN</button>
